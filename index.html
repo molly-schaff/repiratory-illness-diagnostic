@@ -16,16 +16,16 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-The goal of this code is the differentiate between symptoms of a cold and allergies and determine the probability of the quiz taker of having one or the other.
+The goal of this code is the differentiate between symptoms of a cold, allergies, the flu, or coronavirus and determine the probability of the quiz taker of having one or the other.
  
 Known Issues:
-I had isses creating buttons because I would forget the # sign before the page I wanted to direct to, which caused a 404 message multiple times. I had issues programming the results function and getting the results to appear on the page.
+I had trouble getting a button to onclick to add to two different functions.
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
 	
    <head> 
-      <title>Hello World</title>  
+      <title>Respiratory Illness Quiz</title>  
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="apple-mobile-web-app-capable" content="yes">
       <link rel="stylesheet" href="w3.css">
@@ -36,13 +36,16 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <script>
         var allergy_count = 0; // this variable counts the number of times the sign for an allgery is selected
         var cold_count = 0; // this variable counts the number of times the sign for an cold is selected
+	var corona_count = 0; // adds to the corona count
+	var flu_count = 0; // adds to the flu count
 	
 	function resultsPercent(){ // this links the function to the results page
-	var allergyPercent = (allergy_count/6)*100 // this variable calculates the allergy percentage
-	var coldPercent = (cold_count/6)*100 // this variable calculates the cold percentage
+	var allergyPercent = (allergy_count/11)*100 // calculates the allergy percentage
+	var coldPercent = (cold_count/11)*100 // calculates the cold percentage
+	var coronaPercent = (corona_count/11)*100 // calculates the coronavirus percentage
+	var fluPercent = (flu_count/11)*100 // calculates flu percentage
 	var resultText = document.getElementById("results"); // this links the element to the results page
-	resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent; // this allows the probiblity to show up on the last page
-	
+	resultText.innerHTML = "Probability it is allergies = " + allergyPercent + "<br> Probability it is a cold = " + coldPercent + "<br> Probability it is the flu = " + fluPercent + "<br> Probability it is coronavirus = " + coronaPercent; // this allows the probiblity to show up on the last page
 	}
 
         function allergyAdd(){ // this allows me to link the answer choices to the allergy count
@@ -53,6 +56,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         function coldAdd(){ // this allows me to link the answer choices to the cold count
             cold_count = cold_count + 1; // this increases the cold count by one
         }
+	
+	function coronaAdd(){ // adds 1 to corona count when clicked
+		corona_count = corona_count + 1; // adds one to corona count
+	}
+	
+	function fluAdd(){ // adds to flu count when clicked
+		flu_count = flu_count + 1; // adds one to flu count
+	}
 
   </script>
 
@@ -82,11 +93,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <body>
 <div id="header" class="w3-container w3-flat-carrot"> <!-- this creates the header and makes it the same theme as the rest of the app -->
-	<h1>Cold or Allergies?</h1> <!-- this labels the home page -->
+	<h1>Coronavirus or Other Respiratory Illness?</h1> <!-- this labels the home page -->
 </div>
 	
 <div id="content" class="w3-container"> <!-- this creates the section for the question -->
-	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
+	<p>Do you suspect that you may have the coronavirus? Your symptoms may be pointing to other respiratory illnesses, such as a cold, the flu, or seasonal allergies. Answer a few short questions to find out!</p>
 	
 	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a> <!-- this button takes you to the first question of the quiz -->
 	
