@@ -64,7 +64,39 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	function fluAdd(){ // adds to flu count when clicked
 		flu_count = flu_count + 1; // adds one to flu count
 	}
-
+	
+	function addCoronaFlu(){ // adds to the flu and corona count when clicked
+		flu_count = flu_count + 1; // adds one to flu count
+		corona_count = corona_count + 1; // adds one to corona count
+	}
+	
+	function addColdAllergy(){ // adds to the allergy and cold count when clicked
+            cold_count = cold_count + 1; // this increases the cold count by one
+	    allergy_count = allergy_count + 1; // this increases the allergy count by one
+        }
+	
+	function addCoronaAllergy(){ // adds to the allergy and corona count when clicked
+	    allergy_count = allergy_count + 1; // this increases the allergy count by one
+	    corona_count = corona_count + 1; // adds one to corona count
+        }
+	
+	function addColdFlu(){ // adds to the flu and cold count when clicked
+            cold_count = cold_count + 1; // this increases the cold count by one
+	    flu_count = flu_count + 1; // this increases the flu count by one
+        }
+	
+	function notCorona(){ // adds to the allergy, flu, and cold count when clicked
+            cold_count = cold_count + 1; // this increases the cold count by one
+	    allergy_count = allergy_count + 1; // this increases the allergy count by one
+	    flu_count = flu_count + 1; // this increases the flu count by one
+        }
+	
+	function notFlu(){ // adds to the allergy, cold, and corona count when clicked
+	    allergy_count = allergy_count + 1; // this increases the allergy count by one
+	    corona_count = corona_count + 1; // adds one to corona count
+            cold_count = cold_count + 1; // this increases the cold count by one
+        }
+	
   </script>
 
 
