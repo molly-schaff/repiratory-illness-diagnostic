@@ -40,10 +40,10 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	var flu_count = 0; // adds to the flu count
 	
 	function resultsPercent(){ // this links the function to the results page
-	var allergyPercent = math.floor((allergy_count/11)*100); // calculates the allergy percentage to the lowest integer
-	var coldPercent = math.floor((cold_count/11)*100); // calculates the cold percentage to the lowest integer
-	var coronaPercent = math.floor((corona_count/11)*100); // calculates the coronavirus percentage to the lowest integer
-	var fluPercent = math.floor((flu_count/11)*100); // calculates flu percentage to the lowest integer
+	var allergyPercent = Math.floor((allergy_count/11)*100); // calculates the allergy percentage to the lowest integer
+	var coldPercent = Math.floor((cold_count/11)*100); // calculates the cold percentage to the lowest integer
+	var coronaPercent = Math.floor((corona_count/11)*100); // calculates the coronavirus percentage to the lowest integer
+	var fluPercent = Math.floor((flu_count/11)*100); // calculates flu percentage to the lowest integer
 	var resultText = document.getElementById("results"); // this links the element to the results page
 	resultText.innerHTML = "Probability it is allergies = " + allergyPercent + "%<br> Probability it is a cold = " + coldPercent + "%<br> Probability it is the flu = " + fluPercent + "%<br> Probability it is coronavirus = " + coronaPercent + "%"; // this allows the probiblity to show up on the last page
 	}
