@@ -19,7 +19,7 @@ Brief Description of Goal of Code:
 The goal of this code is the differentiate between symptoms of a cold, allergies, the flu, or coronavirus and determine the probability of the quiz taker of having one or the other.
  
 Known Issues:
-I had trouble getting a button to onclick to add to two different functions.
+I had trouble getting a button to onclick to add to two different functions. To resolve this, I created combination functions that added to two+ variables at one time.
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
@@ -40,12 +40,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	var flu_count = 0; // adds to the flu count
 	
 	function resultsPercent(){ // this links the function to the results page
-	var allergyPercent = (allergy_count/11)*100 // calculates the allergy percentage
-	var coldPercent = (cold_count/11)*100 // calculates the cold percentage
-	var coronaPercent = (corona_count/11)*100 // calculates the coronavirus percentage
-	var fluPercent = (flu_count/11)*100 // calculates flu percentage
+	var allergyPercent = math.floor((allergy_count/11)*100); // calculates the allergy percentage to the lowest integer
+	var coldPercent = math.floor((cold_count/11)*100); // calculates the cold percentage to the lowest integer
+	var coronaPercent = math.floor((corona_count/11)*100); // calculates the coronavirus percentage to the lowest integer
+	var fluPercent = math.floor((flu_count/11)*100); // calculates flu percentage to the lowest integer
 	var resultText = document.getElementById("results"); // this links the element to the results page
-	resultText.innerHTML = "Probability it is allergies = " + allergyPercent + "<br> Probability it is a cold = " + coldPercent + "<br> Probability it is the flu = " + fluPercent + "<br> Probability it is coronavirus = " + coronaPercent; // this allows the probiblity to show up on the last page
+	resultText.innerHTML = "Probability it is allergies = " + allergyPercent + "%<br> Probability it is a cold = " + coldPercent + "%<br> Probability it is the flu = " + fluPercent + "%<br> Probability it is coronavirus = " + coronaPercent + "%"; // this allows the probiblity to show up on the last page
 	}
 
         function allergyAdd(){ // this allows me to link the answer choices to the allergy count
@@ -61,7 +61,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		corona_count = corona_count + 1; // adds one to corona count
 	}
 	
-	function fluAdd(){ // adds to flu count when clicked
+	function fluAdd(){ // adds 1 to flu count when clicked
 		flu_count = flu_count + 1; // adds one to flu count
 	}
 	
