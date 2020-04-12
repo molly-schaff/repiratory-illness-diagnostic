@@ -207,9 +207,10 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Is your mucus clear?</p> <!-- this is the sixth question -->
-		<a href="#results" onclick="allergyAdd();" class="w3-btn w3-black"> YES </a> <!-- this is the yes button that adds to the allergy count and proceeds to the results page -->
-		<a href="#results" onclick="coldAdd();" class="w3-btn w3-black"> NO </a> <!-- this is the no button that adds to the cold count and proceeds to the results page -->
+		<p>Do you have a sore throat?</p> <!-- this is the sixth question -->
+			<a href="#seven" onclick="coldAdd();" class="w3-btn w3-black"> YES </a> <!-- this adds to the cold count and proceeds to page seven -->
+			<a href="#seven" onclick="addCoronaFlu();" class="w3-btn w3-black"> SOMETIMES </a> <!-- this adds to the corona and flu count and proceeds to page seven -->
+			<a href="#seven" onclick="allergyAdd();" class="w3-btn w3-black"> OCCASIONALLY, but it is mild </a> <!-- this adds to the allergy count and proceeds to page seven -->
 	</div>
 </div>
 
